@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Infctr</title>
+  <title>Infocentre</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <nav class="black">
+        <div class="nav-wrapper">
+          <ul>    
+            <li><%= link_to "Dashboard",root_path%></li>
+            <li><%= link_to "Blog",blog_path%></li>
+            <li><%= link_to "About Us",about_us_path%></li>
+            <li class="right"><a href="#">Sign In</a></li>
+            <li class="right"><a href="#">Sign Up</a></li>
+          </ul>
+      </nav>
 </head>
 <body>
-
 <%= yield %>
-
 </body>
 </html>
+
+  									
