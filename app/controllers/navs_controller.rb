@@ -1,5 +1,6 @@
 class NavsController < ApplicationController
   def home
+  	@i=1
   end
 
   def blog

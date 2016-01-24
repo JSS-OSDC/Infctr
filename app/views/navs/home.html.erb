@@ -1,2 +1,39 @@
-<h1>Navs#home</h1>
-<p>Find me in app/views/navs/home.html.erb</p>
+<div class="container">
+  <!--  <div class="row">
+        <div class="col s1">1</div>
+        <div class="col s1">2</div>
+        <div class="col s1">3</div>
+        <div class="col s1">4</div>
+        <div class="col s1">5</div>
+        <div class="col s1">6</div>
+        <div class="col s1">7</div>
+        <div class="col s1">8</div>
+        <div class="col s1">9</div>
+        <div class="col s1">10</div>
+        <div class="col s1">11</div>
+        <div class="col s1">12</div>
+    </div> -->
+    <h2 class="content-item center">Announcements</h2>
+    <hr class="divider"></hr>
+    <br></br>
+     <div class="row">
+    <% while @i<=Notif.count %>
+          <div class="col s12 l5 m6">
+            <div class="card z-depth-1">
+              <div class="card-content black-text">
+                <span class="card-title"><h3><%= Notif.find(@i).title %></h3></span>
+                <p><%= Notif.find(@i).abstract %></p>
+              </div>
+              <div class="card-action center">
+              <a href="#">READ MORE</a>
+              <a href="#">FOLLOW</a>
+              </div>
+            </div>
+          </div>
+     <%@i+=1%>
+     <%end%>
+     </div> 
+      <h2 class="content-item center">Files</h2>
+    <hr class="divider"></hr>
+    <br></br>
+</div>
