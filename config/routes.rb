@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'navs/blog', :as => :blog
 
   get 'navs/about_us', :as => :about_us
