@@ -5,28 +5,23 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <nav class="black">
         <div class="nav-wrapper">
-          <ul>    
+          <ul>
+            <li class="center"><b><%= link_to "INFORMATION CENTRE",root_path%></b></li>  
             <li><%= link_to "Dashboard",root_path%></li>
             <li><%= link_to "Blog",blog_path%></li>
             <li><%= link_to "About Us",about_us_path%></li>
             <li class="right">
-            <%if user_signed_in? %>
-            <b><%= current_user.email %></b>
-            <%end%>
+              <%if user_signed_in? %>
+                <b><%= current_user.email %></b>
+              <%end%>
             </li>
             <%if !(user_signed_in?) %>
             <li class="right"><%= link_to "Sign In",new_user_session_path%></li>
             <%else%>
-            <li class="right"><%= link_to "Log Out", destroy_user_session_path, :method => :delete%>
+            <li class="right"><%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
             </li>
             <%end%>
           </ul>
@@ -34,12 +29,10 @@
   </nav>
 </head>
 <body>
-  <div class="container center">
-  <!--<p class="notice"><%= notice %></p>-->
+  <div class="center">
+  <p class="notice red-text"><%= notice %></p>
   <p class="alert red-text"><%= alert %></p>
 <%= yield %>
 </div>
 </body>
 </html>
-
-  									

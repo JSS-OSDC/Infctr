@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125153557) do
+ActiveRecord::Schema.define(version: 20160126070642) do
+
+  create_table "follows", force: :cascade do |t|
+    t.string   "email"
+    t.integer  "notif_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "notifs", force: :cascade do |t|
     t.datetime "created_at",  null: false
