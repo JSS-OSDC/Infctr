@@ -1,5 +1,5 @@
 class AddAbstractToNotifs < ActiveRecord::Migration
   def change
-  	add_column :Notifs, :abstract, :string
+  	add_column :Notif, :abstract, :string
   end
 end

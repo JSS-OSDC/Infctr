@@ -26,7 +26,8 @@
             <%if !(user_signed_in?) %>
             <li class="right"><%= link_to "Sign In",new_user_session_path%></li>
             <%else%>
-            <li class="right"><%= link_to "Log Out", destroy_user_session_path, :method => :delete%></li>
+            <li class="right"><%= link_to "Log Out", destroy_user_session_path, :method => :delete%>
+            </li>
             <%end%>
           </ul>
         </div>
