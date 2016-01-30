@@ -33,7 +33,7 @@ Follow the following steps to setup development environment and start contibutin
 
 5. The rails server command launches a small web server named WEBrick which comes bundled with Ruby.Just run:
          
-         bin/rails server
+         rails server
 
 6. All set now. Visit [http://localhost:3000][localhost] to view the rails app in development environment.
 
