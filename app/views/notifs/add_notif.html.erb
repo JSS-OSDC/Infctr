@@ -1,0 +1,23 @@
+<div class="container">
+<h2>Create Notifications</h2>
+<hr />
+<br /><br/>
+<%=form_for Notif.new do |f| %>
+<div class="field">
+<%=f.label :title%>
+<%=f.text_field :title%>
+</div>
+<br />
+<div class="field">
+<%=f.label :abstract%>
+<%=f.text_field :abstract %>
+</div>
+<div class="field">
+<%=f.label :description%>
+<%=f.text_field :description %>
+</div>
+<div class="actions">
+<%= f.submit "+ Announce",class: "btn waves-effect waves-light"%>
+</div>
+<%end%>
+</div>

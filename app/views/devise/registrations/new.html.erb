@@ -34,11 +34,11 @@
     <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+<br />
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "btn waves-effect waves-light" %>
   </div>
 <% end %>
-
+<br />
 <%= render "devise/shared/links" %>
 </div>

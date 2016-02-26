@@ -9,8 +9,14 @@ class NavsController < ApplicationController
 
   def about_us
   end
+
   def follow(notifid)
-  	Follow.create(email:current_user.email,notif_id:notifid)
+  	# Follow.create(email:current_user.email,notif_id:notifid)
   end
+
+  def add_notif
+    
+  end
+
   helper_method :follow
 end

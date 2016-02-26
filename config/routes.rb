@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'navs/blog', :as => :blog
-
+  get 'notifs/add_notif', :as => :add_notif
   get 'navs/about_us', :as => :about_us
-
+  resources :notifs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

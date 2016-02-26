@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+ <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <nav class="black">
         <div class="nav-wrapper">
@@ -13,16 +14,17 @@
             <li><%= link_to "Dashboard",root_path%></li>
             <li><%= link_to "Blog",blog_path%></li>
             <li><%= link_to "About Us",about_us_path%></li>
+            <%if user_signed_in? %>
             <li class="right">
-              <%if user_signed_in? %>
                 <b><%= current_user.email %></b>
-              <%end%>
             </li>
+            <%end%>
             <%if !(user_signed_in?) %>
             <li class="right"><%= link_to "Sign In",new_user_session_path%></li>
             <%else%>
             <li class="right"><%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
             </li>
+             <li class="right"> <%=link_to "+ Announce",add_notif_path %> </li>
             <%end%>
           </ul>
         </div>
