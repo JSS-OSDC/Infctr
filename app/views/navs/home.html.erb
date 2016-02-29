@@ -15,14 +15,33 @@
     </div> -->
     <div class="center">
     <%if user_signed_in? %>
-    You are signed in as <%= current_user.email %>
+    You are signed in as <b><%= current_user.email %></b>
     <%end%>
     </div>
     <h2 class="content-item center">Following</h2>
     <hr class="divider"></hr>
     <% if user_signed_in? %>
-    <p class="follow"></p>
-    Nothing here yet!
+    <%@j=1%>
+        <div class="row">
+    <%while @j<=Follow.count %>
+    <%if Follow.find(@j).email==current_user.email%>
+    <%@i=Follow.find(@j).notif_id%>
+     <div class="col s12 l6 m6">
+            <div class="card z-depth-1">
+              <div class="card-content black-text">
+              <span class="card-title"><h3><%= Notif.find(@i).title %></h3></span>
+              <p><%= Notif.find(@i).abstract %></p>
+              <p class="follow"></p>
+              </div>
+              <div class="card-action center">
+              <a href="#">READ MORE</a>
+              </div>
+            </div>
+          </div>
+    <%end%>
+    <%@j+=1%>
+    <%end%> 
+  </div>
     <%else%>
     You must be signed in to follow topic.
     <%end%>
@@ -31,6 +50,7 @@
     <hr class="divider"></hr>
     <br></br>
     <div class="row">
+      <%@i=1%>
     <% while @i<=Notif.count %>
           <div class="col s12 l6 m6">
             <div class="card z-depth-1">
@@ -42,7 +62,7 @@
               <div class="card-action center">
               <a href="#">READ MORE</a>
               <%if user_signed_in? %>
-              <a href="#">FOLLOW</a>
+              <a href="/notifs/<%=Notif.find(@i).id%>">FOLLOW</a>
               <%else%>
               <%= link_to "Follow", new_user_session_path %>
               <%end%>
