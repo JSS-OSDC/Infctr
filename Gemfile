@@ -6,6 +6,7 @@ gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'cancancan', '~> 1.10'
 # gem 'strong_parameters'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
